@@ -1,5 +1,4 @@
 # Number Analyzer
-# Number Analyzer
 
 A simple web project using **HTML, CSS, and JavaScript** to analyze numbers and provide meaningful feedback.
 
