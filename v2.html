@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Analyzer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="body">
+      <p>Number Analyzer</p>
+      <ul>
+        <p>Write logic for a program that:</p>
+        <li>Takes a number as input</li>
+        <li>Checks if the number is:</li>
+        <li>Positive, Negative, or Zero Even or Odd</li>
+        <li>Then prints a meaningful message</li>
+      </ul>
+      <p>Enter any number to check its even or odd</p>
+      <label for="">Number</label>
+      <input id="num" type="text" /><br /><br />
+      <button id="submit">submit</button>
+      <p id="ans">soo...</p>
+      <p id="ans1"></p>
+    </section>
+  </body>
+  <script>
+    const sub = document.getElementById("ans");
+    const sub1 = document.getElementById("ans1");
+    const sub_btn = document.getElementById("submit");
+    const limit = 10000000
+
+    sub_btn.onclick = () =>{
+        const inpValue = document.getElementById("num").value.trim();
+
+        if(!inpValue) return showMessage(sub, "input is empty","red");
+
+        const num = Number(inpValue);
+
+        if(Number.isNaN(num)) return showMessage(sub,"invlid input","red");
+        if(num < -limit || num > limit ) return showMessage(sub,"limit exceeded","red");
+
+        let status ="";
+        let color ="";
+
+        if(num === 0){
+            status = "Number is Zero";
+            color = "green";
+        }else if(num < 0){
+            status = "Number is Negative";
+            color = "pink";
+        }else{
+            status = "Number is Positive";
+            color = "yellow";
+        }
+        showMessage(sub,status,color);
+
+        if(Number.isInteger(num)){
+            sub1.textContent = num % 2 === 0 ? "Number is Even" : "Number is odd";
+        }else{
+            sub1.textContent = "Number is not a integer";
+        }
+
+    };
+    function showMessage(element,status,color){
+        element.textContent = status;
+        element.style.backgroundColor = color;
+        element.style.color = "white";
+    }
+  </script>
+</html>

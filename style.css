@@ -1,0 +1,120 @@
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+  }
+
+  .body {
+    background: #ffffff;
+    width: 400px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  .body > p:first-child {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  ul {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+  }
+
+  ul p {
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  li {
+    margin-left: 15px;
+    margin-bottom: 5px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+
+  input:focus {
+    border-color: #4e73df;
+    outline: none;
+    box-shadow: 0 0 5px rgba(78, 115, 223, 0.5);
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4e73df;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background-color: #2e59d9;
+    transform: translateY(-2px);
+  }
+
+  /* Result styling */
+#ans {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 18px;           /* larger font for main message */
+    color: #4e73df;            /* primary blue for number status */
+    padding: 8px;
+    border-radius: 6px;
+    background-color: #e8f0fe; /* subtle blue background */
+    transition: 0.3s;
+}
+
+#ans1 {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 16px;           /* slightly smaller for secondary info */
+    color: #1cc88a;            /* green for even/odd */
+    padding: 6px;
+    border-radius: 6px;
+    background-color: #e6f7ef; /* light green background */
+    transition: 0.3s;
+}
+
+/* Optional: smooth fade effect when updated */
+#ans, #ans1 {
+    opacity: 0;
+    animation: fadeIn 0.4s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Analyzer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="body">
+      <p>Number Analyzer</p>
+      <ul>
+        <p>Write logic for a program that:</p>
+        <li>Takes a number as input</li>
+        <li>Checks if the number is:</li>
+        <li>Positive, Negative, or Zero Even or Odd</li>
+        <li>Then prints a meaningful message</li>
+      </ul>
+      <p>Enter any number to check its even or odd</p>
+      <label for="">Number</label>
+      <input id="num" type="text" /><br /><br />
+      <button id="submit">submit</button>
+      <p id="ans">soo...</p>
+      <p id="ans1"></p>
+    </section>
+  </body>
+  <script>
+    console.log("hello gg");
+    let sub = document.getElementById("ans");
+    let sub1 = document.getElementById("ans1");
+    document.getElementById("submit").onclick = function () {
+      let num = document.getElementById("num").value.trim();
+      if (!num) {
+        sub.textContent = `input is empty`;
+        sub.style.backgroundColor = "red";
+        sub.style.color = "white";
+        return;
+      }
+      num = Number(num);
+      if (Number.isNaN(num)) {
+        sub.textContent = `invalid input`;
+        sub.style.backgroundColor = "red";
+        sub.style.color = "white";
+      } else {
+        if (num >= -10000000 && num <= 10000000) {
+          if (num === 0) {
+            sub.textContent = `Number is a Zero`;
+            sub.style.backgroundColor = "green";
+          } else {
+            if (num > 0) {
+              sub.textContent = `Number is Positive`;
+              sub.style.backgroundColor = "yellow";
+            } else {
+              sub.textContent = `Number is Negative`;
+              sub.style.backgroundColor = "pink";
+            }
+
+            if (num % 2 === 0) {
+              sub1.innerText = `Number is Even`;
+            } else {
+              sub1.innerText = `Number is Odd`;
+            }
+          }
+        } else {
+          sub.textContent = `limit exceed`;
+          sub.style.backgroundColor = "red";
+          sub.style.color = "white";
+        }
+      }
+    };
+  </script>
+</html>
